@@ -679,5 +679,73 @@
         "description": "Password used by the MySQL root user."
       }
     ]
+  },
+  {
+    "type": "stack",
+    "title": "NDGIT",
+    "description": "NDGIT API Gateway",
+    "note": "Deploys a NDGIT API Gateway instance.",
+    "categories": ["api gateway"],
+    "platform": "linux",
+    "logo": "https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-09-21/244134875777_5f92a77600bbadd2d51e_88.png",
+    "repository": {
+      "url": "https://github.com/flybyray/portainer-templates",
+      "stackfile": "stacks/ndgit/docker-stack.yml"
+    },
+    "env": [
+      {
+        "name": "GATEWAY_DNS",
+        "set": "maa-gw.nextbankingapi.com",
+        "label": "DNS Endpoint Adress",
+        "description": "The fully qualified domain name of the endpoint."
+      },
+//      {
+//        "name": "MONGO_REPLICAS",
+//        "label": "Replicas for mongo",
+//        "set": 1
+//      },
+//      {
+//        "name": "ELASTICSEARCH_REPLICAS",
+//        "label": "Replicas for elasticsearch",
+//        "set": 1
+//      },
+      {
+        "name": "ES_CLUSTER_NAME",
+        "label": "ES_CLUSTER_NAME",
+        "set": "graylog"
+      },
+      {
+        "name": "ES_NODE_NAME",
+        "label": "ES_NODE_NAME",
+        "set": "{{.Service.Name}}_{{.Task.Slot}}"
+      },
+      {
+        "name": "ES_HEAP_SIZE",
+        "label": "ES_HEAP_SIZE",
+        "set": "1080m"
+      },
+      {
+        "name": "ES_DIRECT_SIZE",
+        "label": "ES_DIRECT_SIZE",
+        "set": "72m"
+      },
+      {
+        "name": "ES_NETWORK_HOST",
+        "label": "ES_NETWORK_HOST",
+        "set": "0.0.0.0"
+      },
+      {
+        "name": "ES_DISCOVERY_ZEN_PING_UNICAST_HOSTS",
+        "label": "ES_DISCOVERY_ZEN_PING_UNICAST_HOSTS"
+      },
+      {
+        "name": "ES_DISCOVERY_ZEN_MINIMUM_MASTER_NODES",
+        "label": "ES_DISCOVERY_ZEN_MINIMUM_MASTER_NODES"
+      },
+      {
+        "name": "ES_GATEWAY_RECOVER_AFTER_NODES",
+        "label": "ES_GATEWAY_RECOVER_AFTER_NODES"
+      }
+    ]
   }
 ]
