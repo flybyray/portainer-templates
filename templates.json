@@ -699,16 +699,16 @@
         "label": "DNS Endpoint Adress",
         "description": "The fully qualified domain name of the endpoint."
       },
-//      {
-//        "name": "MONGO_REPLICAS",
-//        "label": "Replicas for mongo",
-//        "set": 1
-//      },
-//      {
-//        "name": "ELASTICSEARCH_REPLICAS",
-//        "label": "Replicas for elasticsearch",
-//        "set": 1
-//      },
+      {
+        "name": "MONGO_REPLICAS",
+        "label": "Replicas for mongo",
+        "set": 1
+      },
+      {
+        "name": "ELASTICSEARCH_REPLICAS",
+        "label": "Replicas for elasticsearch",
+        "set": 1
+      },
       {
         "name": "ES_CLUSTER_NAME",
         "label": "ES_CLUSTER_NAME",
